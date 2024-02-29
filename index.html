@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COUNTDOWN TIMER</title>
+    <style>
+        body{
+            background-color: black;
+        }
+    </style>
+    <style type="text/css">
+     .picture
+     {
+       float: right;
+     }
+    </style>
+    <style>
+        #timer 
+      {
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+     <body>
+         <div id="timer">
+         
+    
+ <img class"picture" img src="immm/imagee.jpg" width="500px" height="400px">
+ <center>
+     <table>
+    <right><h1 style="color: aliceblue;">Eddyble's Giveaway</h1></right>
+    <p align="center" style="font-size: 30px;font-style: italic; color: aliceblue;"> Buy an iphone 7+ and get iphone 13 promax for free</p>
+    <p align="center" style="font-size: 30px; font-style: italic; color: aliceblue;">Or deposit a hundred thousand naira into your Zenith account if you have if you do not have create one</p>
+    <p align="center" style="font-size: 30px; font-style: italic; color: aliceblue;">The giveaway ends on the 9th of march 2024. Don't miss out on your chamce to get a promax</p>
+    <br></br><br></br>
+    <tr style="font-size: 25px; font-style: oblique; color: aliceblue;">
+        <td id="days"><center>10</center></td>
+        <td id="hours"><center>59</center></td>
+        <td id="minutes"><center>59</center></td>
+        <td id="seconds"><center>59</center></td>
+    </tr>
+    <tr style="font-size: 25px; font-style: oblique; color: aliceblue;">
+        <td><center>&ensp;&ensp;DAYS&ensp;&ensp;</center></td>
+        <td><center>&ensp;&ensp;HOURS&ensp;&ensp;</center></td>
+        <td><center>&ensp;&ensp;MINUTES&ensp;&ensp;</center></td>
+        <td><center>&ensp;&ensp;SECONDS&ensp;&ensp;</center></td>
+    </tr>
+     </table>
+</center>
+
+<script>
+    //setting the date we are cgtounting down to
+    var countdowndate = new Date ("March 10, 2024 00:00:00").getTime();
+
+    //update the timer after every one second
+    var x = setInterval(function(){
+        //Get the current date and time 
+        var now = new Date().getTime();
+
+        //find the remaining time between now and the countdown date
+        var distance =countdowndate - now;
+
+        //calculate time units
+        var days = Math.floor(distance/(1000*60*60*24));
+        var hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+        var minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+        var seconds= Math.floor((distance%(1000*60))/1000);
+
+        //Display the result in the element with id="demo"
+        // document.getElementById("demo").innerHTML = days + "d" + HOURS + "h" + MINUTES + "m" + SECONDS + "s";
+
+        // // If the count down is finished, write some text
+        // if (distance<0){
+        //     clearInterval(x);
+        //     document.getElementById("demo").innerHTML="EXPIRED";
+        // } 
+
+        document.getElementById("days").innerHTML = days
+        document.getElementById("hours").innerHTML = hours
+        document.getElementById("minutes").innerHTML = minutes
+        document.getElementById("seconds").innerHTML = seconds
+        
+    },1000);
+</script>
+</body>
+</html>
